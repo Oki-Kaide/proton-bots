@@ -1,0 +1,245 @@
+{
+    "____comment": "This file was generated with eosio-abigen. DO NOT EDIT ",
+    "version": "eosio::abi/1.1",
+    "types": [],
+    "structs": [
+        {
+            "name": "Bot",
+            "base": "",
+            "fields": [
+                {
+                    "name": "index",
+                    "type": "uint64"
+                },
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                },
+                {
+                    "name": "oracle_contract",
+                    "type": "name"
+                },
+                {
+                    "name": "feed_index",
+                    "type": "uint64"
+                },
+                {
+                    "name": "tx_count_by_utc_hour",
+                    "type": "pair_uint8_uint64[]"
+                },
+                {
+                    "name": "max_history",
+                    "type": "uint8"
+                },
+                {
+                    "name": "history",
+                    "type": "Tx[]"
+                }
+            ]
+        },
+        {
+            "name": "BotEntry",
+            "base": "",
+            "fields": [
+                {
+                    "name": "bot_index",
+                    "type": "uint64"
+                },
+                {
+                    "name": "data",
+                    "type": "data_variant"
+                }
+            ]
+        },
+        {
+            "name": "OracleEntry",
+            "base": "",
+            "fields": [
+                {
+                    "name": "oracle_index",
+                    "type": "uint64"
+                },
+                {
+                    "name": "data",
+                    "type": "data_variant"
+                }
+            ]
+        },
+        {
+            "name": "Tx",
+            "base": "",
+            "fields": [
+                {
+                    "name": "id",
+                    "type": "checksum256"
+                },
+                {
+                    "name": "time",
+                    "type": "time_point"
+                },
+                {
+                    "name": "data",
+                    "type": "data_variant"
+                }
+            ]
+        },
+        {
+            "name": "addbot",
+            "base": "",
+            "fields": [
+                {
+                    "name": "bot",
+                    "type": "Bot"
+                }
+            ]
+        },
+        {
+            "name": "cleanup",
+            "base": "",
+            "fields": []
+        },
+        {
+            "name": "data_variant",
+            "base": "",
+            "fields": [
+                {
+                    "name": "d_string",
+                    "type": "string?"
+                },
+                {
+                    "name": "d_uint64_t",
+                    "type": "uint64?"
+                },
+                {
+                    "name": "d_double",
+                    "type": "float64?"
+                }
+            ]
+        },
+        {
+            "name": "pair_uint8_uint64",
+            "base": "",
+            "fields": [
+                {
+                    "name": "key",
+                    "type": "uint8"
+                },
+                {
+                    "name": "value",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "process",
+            "base": "",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "entries",
+                    "type": "BotEntry[]"
+                },
+                {
+                    "name": "nonce",
+                    "type": "uint64"
+                },
+                {
+                    "name": "oracle_index",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "process2",
+            "base": "",
+            "fields": [
+                {
+                    "name": "account",
+                    "type": "name"
+                },
+                {
+                    "name": "entries",
+                    "type": "OracleEntry[]"
+                },
+                {
+                    "name": "nonce",
+                    "type": "uint64"
+                },
+                {
+                    "name": "bot_index",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "removebot",
+            "base": "",
+            "fields": [
+                {
+                    "name": "bot_index",
+                    "type": "uint64"
+                }
+            ]
+        },
+        {
+            "name": "updatebot",
+            "base": "",
+            "fields": [
+                {
+                    "name": "bot",
+                    "type": "Bot"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "name": "addbot",
+            "type": "addbot",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Add Bot\nsummary: 'Add Bot'\nicon:\n---\n."
+        },
+        {
+            "name": "cleanup",
+            "type": "cleanup",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Cleanup\nsummary: 'Cleanup'\nicon:\n---\n."
+        },
+        {
+            "name": "process",
+            "type": "process",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Process\nsummary: 'Process'\nicon:\n---\n."
+        },
+        {
+            "name": "process2",
+            "type": "process2",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Process2\nsummary: 'Process2'\nicon:\n---\n."
+        },
+        {
+            "name": "removebot",
+            "type": "removebot",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Remove Bot\nsummary: 'Remove Bot'\nicon:\n---\n."
+        },
+        {
+            "name": "updatebot",
+            "type": "updatebot",
+            "ricardian_contract": "---\nspec_version: \"0.2.0\"\ntitle: Update Bot\nsummary: 'Update Bot'\nicon:\n---\n."
+        }
+    ],
+    "tables": [
+        {
+            "name": "bots",
+            "type": "Bot",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
+    "ricardian_clauses": [],
+    "variants": []
+}
